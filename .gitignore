@@ -1,0 +1,23 @@
+﻿# Python
+__pycache__/
+*.pyc
+.env
+venv/
+.venv/
+*.ipynb_checkpoints/
+
+# Data files (large/auto-generated)
+data/raw/*
+data/processed/*
+data/db/*.db
+
+# Power BI local cache
+*.pbi
+
+# Reports (generated)
+reports/*.pdf
+reports/*.pptx
+
+# OS junk
+.DS_Store
+Thumbs.db
