@@ -1,23 +1,25 @@
-﻿# Python
-__pycache__/
-*.pyc
-.env
-venv/
-.venv/
-*.ipynb_checkpoints/
-
-# Data files (large/auto-generated)
-data/raw/*
-data/processed/*
-data/db/*.db
-
-# Power BI local cache
-*.pbi
-
-# Reports (generated)
-reports/*.pdf
-reports/*.pptx
-
-# OS junk
-.DS_Store
-Thumbs.db
+# Python 
+__pycache__/ 
+*.py[cod] 
+*$py.class 
+.Python 
+env/ 
+venv/ 
+.venv/ 
+ECHO is on.
+# Jupyter 
+.ipynb_checkpoints/ 
+*.ipynb_checkpoints 
+ECHO is on.
+# Data files 
+data/raw/*.csv 
+data/processed/*.csv 
+ECHO is on.
+# IDE 
+.vscode/ 
+.idea/ 
+ECHO is on.
+# Temporary files 
+*.tmp 
+~$* 
+Thumbs.db 
