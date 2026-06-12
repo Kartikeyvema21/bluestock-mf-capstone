@@ -126,6 +126,10 @@ text
 
 ---
 
+## Interactive Dashboard (Power BI Service)
+
+[Click here to view the live dashboard](https://app.powerbi.com/groups/me/reports/90387003-0d21-419d-86bb-5226795722a0/b4814ddf04a9294668e9?experience=power-bi)
+
 ## 👥 Team
 
 - Kartikey Verma
