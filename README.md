@@ -50,6 +50,172 @@ A comprehensive analytics system for mutual funds including ETL pipeline, data c
 - **Benchmark comparison chart** – plotted top 5 funds vs Nifty 50 and Nifty 100 over 3 years; computed tracking error = `std(fund_return − benchmark_return) × √252` → `benchmark_comparison.png/.html` and `tracking_errors.csv`.
 - **Deliverables:** `notebooks/04_performance_analytics.ipynb`, `fund_scorecard.csv`, `alpha_beta.csv`, benchmark comparison chart PNG.
 
+### Day 5 – Power BI Dashboard
+- **Connected Power BI to data** – loaded all cleaned CSVs (`dim_fund`, `dim_date`, `fact_nav`, `fact_transactions`, `fact_performance`, `fact_aum`, `fund_scorecard`) via Text/CSV.
+- **Created star schema relationships** in Power BI Model view.
+- **Page 1 – Industry Overview:** KPI cards (Total AUM ₹81L Cr, SIP Inflows ₹31K Cr, Folios 26.12 Cr, Schemes 1,908), AUM trend line chart (2022–2025), AUM by AMC bar chart.
+- **Page 2 – Fund Performance:** Scatter plot (return vs risk, bubble size = AUM), sortable fund scorecard table, NAV line chart with scheme slicer, slicers for fund house, category, and plan, drill‑through to NAV detail page.
+- **Page 3 – Investor Analytics:** Bar chart (transaction amount by state), donut chart (SIP/Lumpsum/Redemption split), bar chart (age group vs avg SIP amount), monthly transaction volume line chart, slicers for state, age group, city tier.
+- **Page 4 – SIP & Market Trends:** Dual‑axis chart (SIP inflow bar + Nifty 50 line), category inflow heatmap, top 5 categories by net inflow (FY25).
+- **Interactivity:** Drill‑through from fund table to NAV detail page, tooltips on all charts, Bluestock colour theme applied, logo added.
+- **Export:** `.pbix` file saved in `dashboard/`, PDF exported to `reports/`, 4 page PNG screenshots captured.
+- **Deliverables:** `bluestock_mf_dashboard.pbix`, `Dashboard.pdf`, 4 page PNG screenshots.
+
+### Day 6 – Advanced Analytics & Risk Metrics
+- **Historical VaR (95%) and CVaR** – computed 5th percentile of daily returns and mean of returns below VaR threshold for all 40 schemes → `var_cvar_report.csv`.
+- **Rolling 90‑day Sharpe ratio** – calculated rolling Sharpe for top 5 funds and plotted over time → `rolling_sharpe_chart.png`.
+- **Investor cohort analysis** – grouped investors by first transaction year; computed avg SIP amount, total invested, top fund preference per cohort → `cohort_analysis.csv`.
+- **SIP continuity analysis** – for investors with 6+ SIP transactions, computed average gap between dates; flagged investors with gap > 35 days as "at‑risk" → `sip_continuity_analysis.csv`.
+- **Simple fund recommender** – based on risk appetite (Low / Moderate / High), outputs top 3 funds by Sharpe ratio within matching risk grade → `recommender.py`.
+- **Sector HHI concentration** – calculated Herfindahl‑Hirschman Index = Σ(weight_i²) per fund; compared across all equity funds → `sector_hhi.csv`.
+- **5 advanced insights** – documented in Jupyter Markdown: highest VaR funds, cohort behaviour, SIP continuity rate, sector HHI, rolling Sharpe trends.
+- **Deliverables:** `notebooks/05_advanced_analytics.ipynb`, `var_cvar_report.csv`, `recommender.py`, `rolling_sharpe_chart.png`.
+
 ---
 
 ## 📁 Current Folder Structure (pushed)
+
+bluestock_mf_capstone/
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── data_dictionary.md
+├── run_queries.py
+├── data/
+│ ├── raw/ # original CSV files
+│ ├── processed/ # cleaned CSVs & performance metrics
+│ └── db/ # bluestock_mf.db (SQLite)
+├── notebooks/
+│ ├── 01_data_ingestion.ipynb
+│ ├── 02_data_cleaning.ipynb
+│ ├── 03_eda_analysis.ipynb # Day 3 EDA
+│ ├── 04_performance_analytics.ipynb # Day 4 Performance
+│ └── 05_advanced_analytics.ipynb # Day 6 Advanced Analytics
+├── scripts/
+│ ├── data_ingestion.py
+│ ├── generate_day2_data.py
+│ ├── clean_*.py (cleaning scripts)
+│ ├── load_to_sqlite.py
+│ ├── eda_analysis.py
+│ ├── complete_performance_analytics.py
+│ ├── benchmark_tracking_error.py
+│ └── recommender.py # Day 6 recommender
+├── sql/
+│ ├── schema.sql
+│ └── queries.sql
+├── dashboard/
+│ └── bluestock_mf_dashboard.pbix # Day 5 Power BI file
+├── reports/
+│ ├── Dashboard.pdf # Day 5 PDF export
+│ ├── Page1.png, Page2.png, Page3.png, Page4.png # Day 5 page screenshots
+│ ├── eda_plots/ # Day 3 & Day 4 charts
+│ └── rolling_sharpe_chart.png # Day 6 chart
+└── bonus/ # B1–B5 bonus challenges
+
+text
+
+---
+
+## 🚀 Bonus Challenges Implemented (Separate Folder)
+
+- **B1 – Scheduled ETL** – `bonus/b1_scheduled_etl.py` (auto‑fetch NAV from mfapi.in)
+- **B2 – Streamlit web app** – `bonus/b2_streamlit_app.py` (alternative to Power BI)
+- **B3 – Monte Carlo simulation** – `bonus/b3_monte_carlo.py` (NAV projection with uncertainty bands)
+- **B4 – Markowitz Efficient Frontier** – `bonus/b4_markowitz.py` (portfolio optimisation)
+- **B5 – Automated HTML email report** – `bonus/b5_email_report.py` (weekly performance summary)
+
+---
+
+## 👥 Team
+
+- Kartikey Verma
+- Manasa Katragadda
+- Shubham Kumar
+- Dharya Agarwal
+
+## 📝 License
+
+bluestock_mf_capstone/
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── data_dictionary.md
+├── run_queries.py
+├── data/
+│ ├── raw/ # original CSV files
+│ ├── processed/ # cleaned CSVs & performance metrics
+│ └── db/ # bluestock_mf.db (SQLite)
+├── notebooks/
+│ ├── 01_data_ingestion.ipynb
+│ ├── 02_data_cleaning.ipynb
+│ ├── 03_eda_analysis.ipynb # Day 3 EDA
+│ ├── 04_performance_analytics.ipynb # Day 4 Performance
+│ └── 05_advanced_analytics.ipynb # Day 6 Advanced Analytics
+├── scripts/
+│ ├── data_ingestion.py
+│ ├── generate_day2_data.py
+│ ├── clean_*.py (cleaning scripts)
+│ ├── load_to_sqlite.py
+│ ├── eda_analysis.py
+│ ├── complete_performance_analytics.py
+│ ├── benchmark_tracking_error.py
+│ └── recommender.py # Day 6 recommender
+├── sql/
+│ ├── schema.sql
+│ └── queries.sql
+├── dashboard/
+│ └── bluestock_mf_dashboard.pbix # Day 5 Power BI file
+├── reports/
+│ ├── Dashboard.pdf # Day 5 PDF export
+│ ├── Page1.png, Page2.png, Page3.png, Page4.png # Day 5 page screenshots
+│ ├── eda_plots/ # Day 3 & Day 4 charts
+│ └── rolling_sharpe_chart.png # Day 6 chart
+└── bonus/ # B1–B5 bonus challenges
+
+text
+
+---
+
+## 🚀 Bonus Challenges Implemented (Separate Folder)
+
+- **B1 – Scheduled ETL** – `bonus/b1_scheduled_etl.py` (auto‑fetch NAV from mfapi.in)
+- **B2 – Streamlit web app** – `bonus/b2_streamlit_app.py` (alternative to Power BI)
+- **B3 – Monte Carlo simulation** – `bonus/b3_monte_carlo.py` (NAV projection with uncertainty bands)
+- **B4 – Markowitz Efficient Frontier** – `bonus/b4_markowitz.py` (portfolio optimisation)
+- **B5 – Automated HTML email report** – `bonus/b5_email_report.py` (weekly performance summary)
+
+---
+
+## 👥 Team
+
+- Kartikey Verma
+- Manasa Katragadda
+- Shubham Kumar
+- Dharya Agarwal
+
+## 📝 License
+
+
+---
+
+## 🚀 Bonus Challenges Implemented (Separate Folder)
+
+- **B1 – Scheduled ETL** – `bonus/b1_scheduled_etl.py` (auto‑fetch NAV from mfapi.in)
+- **B2 – Streamlit web app** – `bonus/b2_streamlit_app.py` (alternative to Power BI)
+- **B3 – Monte Carlo simulation** – `bonus/b3_monte_carlo.py` (NAV projection with uncertainty bands)
+- **B4 – Markowitz Efficient Frontier** – `bonus/b4_markowitz.py` (portfolio optimisation)
+- **B5 – Automated HTML email report** – `bonus/b5_email_report.py` (weekly performance summary)
+
+---
+
+## 👥 Team
+
+- Kartikey Verma
+- Manasa Katragadda
+- Shubham Kumar
+- Dharya Agarwal
+
+## 📝 License
+
+This project is for educational purposes only.
+
