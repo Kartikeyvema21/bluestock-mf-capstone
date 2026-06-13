@@ -1,0 +1,6 @@
+scheme_name,cagr,annualised_return,annualised_volatility,sharpe_ratio,beta,max_drawdown,var_95,start_date,end_date,n_days
+Axis Small Cap Fund,7.54%,4.89%,19.96%,-0.06,-0.01,-38.85%,-2.06%,2023-01-03,2025-12-31,1094
+HDFC Large Cap Fund,25.92%,17.36%,20.45%,0.56,-0.05,-26.38%,-2.21%,2023-01-03,2025-12-31,1094
+ICICI Balanced Advantage,-1.55%,-0.38%,19.95%,-0.32,-0.02,-34.34%,-2.26%,2023-01-03,2025-12-31,1094
+Kotak Equity Opportunities,20.28%,13.31%,20.06%,0.36,-0.06,-25.95%,-2.08%,2023-01-03,2025-12-31,1094
+SBI Bluechip Fund,57.71%,36.82%,20.22%,1.52,-0.05,-18.74%,-2.01%,2023-01-03,2025-12-31,1094
