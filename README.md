@@ -169,3 +169,10 @@ python run_pipeline.py"## ?? LIVE INTERACTIVE DASHBOARD"
 
 -e "\n\n## ?? LIVE DASHBOARD\n\n[Click here to view live Power BI dashboard](https://app.powerbi.com/groups/me/reports/90387003-0d21-419d-86bb-5226795722a0/b4814ddf04a9294668e9?experience=power-bi)\n"  
 "?? Live Dashboard: https://app.powerbi.com/groups/me/reports/90387003-0d21-419d-86bb-5226795722a0/b4814ddf04a9294668e9?experience=power-bi"  
+
+## 📊 Live Dashboard
+
+🔗 **[Click here to open the Bluestock Mutual Fund Analytics Dashboard](https://app.powerbi.com/groups/me/reports/90387003-0d21-419d-86bb-5226795722a0/b4814ddf04a9294668e9?experience=power-bi)**""  
+"## ?? Live Dashboard"  
+""  
+"?? **[Click here to open the Bluestock Mutual Fund Analytics Dashboard](https://app.powerbi.com/groups/me/reports/90387003-0d21-419d-86bb-5226795722a0/b4814ddf04a9294668e9?experience=power-bi)**"  
